@@ -1,11 +1,11 @@
 var app = window.angular.module('app', [])
 
-app.factory('pokemonFetcher', pokemonFetcher)
+app.factory('websiteFetcher', websiteFetcher)
 app.controller('mainCtrl', mainCtrl)
 
-function pokemonFetcher ($http) {
+function websiteFetcher ($http) {
   
-  var API_ROOT = 'pokemon'
+  var API_ROOT = 'websites'
   return {
     get: function () {
       return $http
@@ -13,33 +13,21 @@ function pokemonFetcher ($http) {
         .then(function (resp) {
           return resp.data
         })
-    },
-    tryit: function() {
-        var politics = "/politics";      
-//var politics = "https://zlzlap7j50.execute-api.us-east-1.amazonaws.com/prod";
-      return $http
-        .get(politics)
-        .then(function (resp) {
-          console.log("Get Worked");
-          console.log(resp.data);
-          return resp.data
-        })
     }
   }
 
 }
 
-function mainCtrl ($scope, pokemonFetcher, $http) {
+function mainCtrl ($scope, websiteFetcher, $http) {
 
-  $scope.pokemon = []
-  $scope.politics = [];
+  $scope.websites = []
 
-$scope.addPoki = function() {
-  var formData = {name:$scope.Name,avatarUrl:$scope.Url};
+$scope.addFavorite = function() {
+  var formData = {name:$scope.title,websiteUrl:$scope.Url};
   console.log(formData);
-  var pokiURL = 'pokemon';
+  var websiteURL = 'websites';
   $http({
-     url: pokiURL,
+     url: websiteURL,
      method: "POST",
      data: formData
   }).success(function(data, status, headers, config) {
@@ -50,15 +38,9 @@ $scope.addPoki = function() {
 }
 
 
-  pokemonFetcher.get()
+  websiteFetcher.get()
     .then(function (data) {
-      $scope.pokemon = data
+      $scope.websites = data
     })
 
-  pokemonFetcher.tryit()
-    .then(function (data) {
-      console.log("tryit");
-      console.log(data);
-      $scope.politics = data;
-    })
 }
