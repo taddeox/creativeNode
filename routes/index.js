@@ -4,17 +4,17 @@ var router = express.Router();
 
 var websites = [
   {
-    title: 'Pikachu',
-    websiteUrl: 'http://rs795.pbsrc.com/albums/yy232/PixKaruumi/Pokemon%20Pixels/Pikachu_Icon__free__by_Aminako.gif~c200'
+    title: 'Google',
+    websiteUrl: 'http://www.google.com'
   },
   {
-    title: 'Charmander',
-    websiteUrl: 'http://24.media.tumblr.com/tumblr_ma0tijLFPg1rfjowdo1_500.gif'
+    title: 'Facebook',
+    websiteUrl: 'http://www.facebook.com'
 
   },
   {
-    title: 'Mew',
-    websiteUrl: 'http://media3.giphy.com/media/J5JrPT8r1xGda/giphy.gif'
+    title: 'Twitter',
+    websiteUrl: 'http://www.twitter.com'
   }
 ];
 
@@ -40,3 +40,4 @@ router.post('/websites', function(req, res) {
 
 
 module.exports = router;
+
