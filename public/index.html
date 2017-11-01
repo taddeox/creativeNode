@@ -11,22 +11,22 @@
 <script src="javascripts/app.js"></script>
 <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <meta charset="utf-8">
-  <title>Node api tutorial</title>
+  <title>Favorite Websites</title>
 </head>
 <body>
 
   <div id='app' ng-app='app' ng-controller='mainCtrl'>
 
 <h1>Tell us your favorite website!</h1>
-<form id="newPoki" ng-submit="addPoki()">
+<form id="newFavorite" ng-submit="addFavorite()">
   Name: <input type="text" ng-model="Title" value=""><br>
   Url: <input type="url" ng-model="Url" value=""><br>
   <input type="submit" value="Submit">
 </form>
 
-    <ul ng-if='pokemon.length' class='list center stretch'>
-      <li ng-repeat='p in pokemon' class='pokemon'>
-        <a href="{{p.avatarUrl}}">{{p.name}}</a>
+    <ul ng-if='websites.length' class='list center stretch'>
+      <li ng-repeat='f in websites' class='favorite'>
+        <a href="{{f.websiteUrl}}">{{f.title}}</a>
       </li>
     </ul>
 
