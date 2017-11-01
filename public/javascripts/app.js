@@ -23,7 +23,7 @@ function mainCtrl ($scope, websiteFetcher, $http) {
   $scope.websites = []
 
 $scope.addFavorite = function() {
-  var formData = {name:$scope.title,websiteUrl:$scope.Url};
+  var formData = {title:$scope.Title,websiteUrl:$scope.Url};
   console.log(formData);
   var websiteURL = 'websites';
   $http({
