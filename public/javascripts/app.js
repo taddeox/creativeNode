@@ -18,7 +18,7 @@ function websiteFetcher ($http) {
 
 }
 
-function mainCtrl ($scope, websiteFetcher, $http) {
+function mainCtrl ($scope, websiteFetcher, $http, $window) {
 
   $scope.websites = []
 
@@ -35,6 +35,10 @@ $scope.addFavorite = function() {
   }).error(function(data, status, headers, config) {
     console.log("Post failed");
   });
+}
+
+$scope.reloadroute = function(){
+  $window.location.reload();
 }
 
 

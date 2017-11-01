@@ -18,7 +18,7 @@
   <div id='app' ng-app='app' ng-controller='mainCtrl'>
 
 <h1>Tell us your favorite website!</h1>
-<form id="newFavorite" ng-submit="addFavorite()">
+<form id="newFavorite" ng-submit="addFavorite();reloadroute();">
   Name: <input type="text" ng-model="Title" value=""><br>
   Url: <input type="url" ng-model="Url" value=""><br>
   <input type="submit" value="Submit">
