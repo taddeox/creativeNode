@@ -18,14 +18,14 @@
 
 <h1>Tell us your favorite websites!</h1>
 <form id="newFavorite" ng-submit="addFavorite();reloadroute();">
-  Name: <input type="text" ng-model="Title" value=""><br>
-  Url: <input type="url" ng-model="Url" value=""><br>
+  <input type="text" ng-model="Title" value="" placeholder="Name"><br>
+  <input type="url" ng-model="Url" value="" placeholder="Url"><br>
   <input type="submit" value="Submit">
 </form>
 
     <ul ng-if='websites.length' class='list center stretch'>
       <li ng-repeat='f in websites' class='favorite'>
-        <a href="{{f.websiteUrl}}">{{f.title}}</a>
+        <a href="{{f.websiteUrl}}" style="background-color:{{f.color}}">{{f.title}}</a>
       </li>
     </ul>
 

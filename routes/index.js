@@ -5,16 +5,18 @@ var router = express.Router();
 var websites = [
   {
     title: 'Google',
-    websiteUrl: 'http://www.google.com'
+    websiteUrl: 'http://www.google.com',
+    color: 'cyan'
   },
   {
     title: 'Facebook',
-    websiteUrl: 'http://www.facebook.com'
-
+    websiteUrl: 'http://www.facebook.com',
+    color: 'pink'
   },
   {
     title: 'Twitter',
-    websiteUrl: 'http://www.twitter.com'
+    websiteUrl: 'http://www.twitter.com',
+    color: 'grey'
   }
 ];
 

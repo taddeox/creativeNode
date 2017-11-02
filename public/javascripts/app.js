@@ -23,7 +23,7 @@ function mainCtrl ($scope, websiteFetcher, $http, $window) {
   $scope.websites = []
 
 $scope.addFavorite = function() {
-  var formData = {title:$scope.Title,websiteUrl:$scope.Url};
+  var formData = {title:$scope.Title,websiteUrl:$scope.Url,color:getRandomColor()};
   console.log(formData);
   var websiteURL = 'websites';
   $http({
@@ -46,5 +46,15 @@ $scope.reloadroute = function(){
     .then(function (data) {
       $scope.websites = data
     })
+
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
 }
