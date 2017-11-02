@@ -1,13 +1,23 @@
 ul{
 list-style-type: none;
+padding-top: 0.5em;
+padding-left:0em;
 }
 
 li{
 font-size:800%;
+line-height: 1em;
+padding-top:0em;
+padding-bottom:0em;
 }
 
 #app{
-margin: auto;
-width:50%;
+margin: 0;
+width:100%;
 text-align:center;
+}
+
+a.wide{
+display:block;
+width:100%;
 }
