@@ -23,7 +23,12 @@ function mainCtrl ($scope, websiteFetcher, $http, $window) {
   $scope.websites = []
 
 $scope.addFavorite = function() {
-  var formData = {title:$scope.Title,websiteUrl:$scope.Url,color:getRandomColor()};
+  var tempUrl = $scope.Url;
+  if(tempUrl.substring(0,7) != 'http://' && tempUrl.substring(0,8) != 'https://')
+    tempUrl = 'http://' + tempUrl;
+
+
+  var formData = {title:$scope.Title,websiteUrl:tempUrl,color:getRandomColor()};
   console.log(formData);
   var websiteURL = 'websites';
   $http({
