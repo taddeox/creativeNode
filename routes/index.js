@@ -16,7 +16,7 @@ var websites = [
   {
     title: 'Twitter',
     websiteUrl: 'http://www.twitter.com',
-    color: 'grey'
+    color: '#E30B5D'
   }
 ];
 
